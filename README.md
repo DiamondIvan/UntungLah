@@ -305,4 +305,3 @@ With UntungLah, we aim to make business learning more practical, financial under
 **UntungLah — Learn Smarter. Run Better. Earn Better.**
 
 *Empowering Malaysian microentrepreneurs, one better business decision at a time.*
- 
