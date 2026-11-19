@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import {
-  breakEven, compare, demoBusiness, emptyBusiness, profileSchema, readBusiness,
+  activity, breakEven, compare, demoBusiness, share, emptyBusiness, profileSchema, readBusiness,
   recordSchema, rm, salesRevenue, saveBusiness, scoreQuiz, simulate, simulationInput,
   snapshot, storageKey, today, unitEconomics, validDate,
 } from '../src/domain';
@@ -16,10 +16,10 @@ test('uses sen for revenue and sums cash outflows once', () => {
   assert.equal(salesRevenue(5, 40), 200);
   assert.equal(salesRevenue(0.1, 3), 0.3);
   assert.deepEqual(snapshot(demoBusiness().records), {
-    revenue: 200, purchases: 120, expenses: 20, outflows: 140, surplus: 60,
+    revenue: 225, purchases: 80, expenses: 35, outflows: 115, surplus: 110,
   });
   const [, ...withoutSales] = demoBusiness().records;
-  assert.equal(snapshot(withoutSales).surplus, -140);
+  assert.equal(snapshot(withoutSales).surplus, -115);
 });
 
 test('distinguishes contribution, margin and markup', () => {
@@ -103,7 +103,24 @@ test('each lesson has two or three valid quiz questions and a scoring key', () =
     assert.equal(scoreQuiz(lesson.questions, lesson.questions.map(question => question.correct)), lesson.questions.length);
   }
   const pricing = getLesson('pricing');
-  assert.equal(pricing.questions[0].options[pricing.questions[0].correct], 'RM2');
+  assert.equal(pricing.questions[0].options[pricing.questions[0].correct], 'RM3');
+  assert.equal(pricing.questions[2].options[pricing.questions[2].correct], '51.1%');
+  for (const lesson of lessons) assert.ok(lesson.objectives.length >= 3 && lesson.learn.length > 0 && lesson.example.blocks.length > 0 && lesson.task.trim());
   assert.equal(scoreQuiz(pricing.questions, [1, 0, 2]), 2);
   assert.equal(scoreQuiz(pricing.questions, []), 0);
+});
+
+test('reports spending share in sen and an unavailable share without revenue', () => {
+  assert.equal(share(120, 200), 60);
+  assert.equal(share(0.1, 0.3)?.toFixed(2), '33.33');
+  assert.equal(share(50, 0), null);
+});
+
+test('summarises recording days, quiz average and goals', () => {
+  const business = demoBusiness();
+  assert.deepEqual(activity(business), { recordDays: 1, quizAverage: null, goalsDone: 0, goalsTotal: 0 });
+  business.attempts.push({ topic: 'pricing', score: 3, total: 3, date: '2026-11-18' }, { topic: 'cost', score: 1, total: 2, date: '2026-11-19' });
+  business.goals.push({ id: 'g1', title: 'Track unsold packs', topic: 'growth', target: '', completed: true });
+  business.records.push({ id: 'r2', date: '2026-01-02', type: 'expense', category: 'Gas', description: '', amount: 5 });
+  assert.deepEqual(activity(business), { recordDays: 2, quizAverage: 80, goalsDone: 1, goalsTotal: 1 });
 });

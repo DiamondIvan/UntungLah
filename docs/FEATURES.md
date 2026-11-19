@@ -2,7 +2,7 @@
 
 ## My Business
 
-Create a profile or load the fictional Warung Nasi Lemak. Record sales with a quantity and selling price, purchases with a cash amount and operating expenses such as a stall fee. View the entries and delete mistakes. Saved entries drive the financial snapshot.
+Create a profile or load the fictional Mak Cik’s Nasi Lemak. Record sales with a quantity and selling price, purchases with a cash amount and operating expenses such as a stall fee. View the entries and delete mistakes. Saved entries drive the financial snapshot.
 
 | Dashboard measure | Meaning |
 | --- | --- |
@@ -13,7 +13,7 @@ Create a profile or load the fictional Warung Nasi Lemak. Record sales with a qu
 
 ## Learning Path
 
-Study Record Keeping, Cost Calculation, Pricing Strategy, Profit Management, Cash Flow and Business Growth. Each topic includes a learning objective, a lesson, a Malaysian example and a short multiple-choice quiz. The quiz shows feedback and an explanation and supports retrying. Quiz attempts persist in the current browser.
+Study Record Keeping, Cost Calculation, Pricing Strategy, Profit Management, Cash Flow and Business Growth. Each lesson has four steps: **Learn** (objectives, explanations, formulas and a worked Mak Cik’s Nasi Lemak example, plus a calculated note from your own figures), **Check your knowledge** (two or three multiple-choice questions with explanations and retry), **Try it yourself** (a calculator: transaction sorting, cost per unit, pricing, profit and break-even, cash flow planner, equipment payback) and **Apply to your business** (save the lesson task as a goal). A topic counts as completed when its quiz is passed. Step progress, quiz attempts and goals persist in the current browser.
 
 ## Practice Lab
 

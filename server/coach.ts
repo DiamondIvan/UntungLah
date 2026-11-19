@@ -39,7 +39,10 @@ export function makeCoach(env: NodeJS.ProcessEnv = process.env, client?: Pick<Op
   let provider = client;
   if (!provider && apiKey && baseURL && model) {
     try {
-      if (new URL(baseURL).protocol === 'https:') provider = new OpenAI({ apiKey, baseURL, timeout: 10_000, maxRetries: 0 });
+      // HTTPS for hosted providers; plain HTTP only for a gateway on this machine (e.g. a local Qoder bridge or Ollama).
+      const url = new URL(baseURL);
+      const local = url.protocol === 'http:' && ['localhost', '127.0.0.1', '[::1]'].includes(url.hostname);
+      if (url.protocol === 'https:' || local) provider = new OpenAI({ apiKey, baseURL, timeout: 10_000, maxRetries: 0 });
     } catch {
       // Invalid deployment configuration leaves the local demo available.
     }

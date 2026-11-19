@@ -1,18 +1,20 @@
 import { useRef, useState } from 'react';
 import { coachResponse, type CoachRequest, type CoachResult } from './coach-contract';
 
+export type CoachOutcome = { key: string; result?: CoachResult; error?: string };
+
 export function useCoach() {
   const cache = useRef(new Map<string, CoachResult>());
   const pending = useRef(false);
   const [busy, setBusy] = useState(false);
-  const [latest, setLatest] = useState<{ key: string; result?: CoachResult; error?: string }>();
-  async function ask(input: CoachRequest) {
-    if (pending.current) return;
+  const [latest, setLatest] = useState<CoachOutcome>();
+  async function ask(input: CoachRequest): Promise<CoachOutcome | undefined> {
+    if (pending.current) return undefined;
     const key = JSON.stringify(input);
     const cached = cache.current.get(key);
     if (cached) {
       setLatest({ key, result: cached });
-      return;
+      return { key, result: cached };
     }
     pending.current = true;
     setBusy(true);
@@ -32,8 +34,11 @@ export function useCoach() {
         cache.current.set(key, result);
       }
       setLatest({ key, result });
+      return { key, result };
     } catch {
-      setLatest({ key, error: 'The coach couldn’t respond. Check your connection and try again.' });
+      const failed = { key, error: 'The coach couldn’t respond. Check your connection and try again.' };
+      setLatest(failed);
+      return failed;
     } finally {
       pending.current = false;
       setBusy(false);

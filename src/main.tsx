@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { ChartNoAxesCombined, ChevronRight, FlaskConical, Store } from 'lucide-react';
-import { nav, GuidedBar, type Page } from './components';
+import { FlaskConical, Lightbulb, Store } from 'lucide-react';
+import { Brand, nav, GuidedBar, type Page } from './components';
 import { BusinessPage } from './business';
-import { LearningPage } from './learning';
+import { LearningPage, type Step } from './learning';
 import { PracticePage } from './practice';
 import { CoachPage } from './coach-page';
 import { ProgressPage, type GoalDraft } from './progress';
-import { demoBusiness, readBusiness, saveBusiness, snapshot, today, topicIds, unitEconomics, type Business, type TopicId } from './domain';
+import { demoBusiness, readBusiness, saveBusiness, snapshot, today, topicIds, unitEconomics, type Business, type LessonStep, type TopicId } from './domain';
 import './styles.css';
 
 type Guide = { step: number; highest: number };
@@ -50,7 +50,7 @@ function App() {
   });
   const [page, setPage] = useState<Page>('business');
   const [topic, setTopic] = useState<TopicId | null>(null);
-  const [quiz, setQuiz] = useState(false);
+  const [lessonStep, setLessonStep] = useState<Step>('learn');
   const [goalDraft, setGoalDraft] = useState<GoalDraft | null>(null);
   const [storageError, setStorageError] = useState(false);
   const [guideComplete, setGuideComplete] = useState(false);
@@ -77,7 +77,7 @@ function App() {
     }
   }, [personal, demo, view]);
 
-  useEffect(() => { window.scrollTo(0, 0); }, [activePage, guide?.step, topic, quiz]);
+  useEffect(() => { window.scrollTo(0, 0); }, [activePage, guide?.step, topic, lessonStep]);
 
   function update(transform: (previous: Business) => Business) {
     (sample ? setDemo : setPersonal)(transform);
@@ -86,11 +86,11 @@ function App() {
     setView(previous => ({ ...previous, guide: null }));
     setPage(next);
     setGuideComplete(false);
-    if (next === 'learning') { setTopic(null); setQuiz(false); }
+    if (next === 'learning') { setTopic(null); setLessonStep('learn'); }
   }
   function selectTopic(next: TopicId | null) {
     setTopic(next);
-    setQuiz(false);
+    setLessonStep('learn');
     setPage('learning');
   }
   function startGuide() {
@@ -113,48 +113,61 @@ function App() {
     else goTo('progress');
   }
 
+  const dateLabel = new Intl.DateTimeFormat('en-MY', { timeZone: 'Asia/Kuala_Lumpur', weekday: 'long', day: 'numeric', month: 'long' }).format(new Date());
+  const initials = business.profile ? business.profile.name.split(/\s+/).filter(Boolean).slice(0, 2).map(word => word[0]!.toUpperCase()).join('') : '';
+  const markStep = (id: TopicId, step: LessonStep) => update(previous => previous.steps[step].includes(id) ? previous : { ...previous, steps: { ...previous.steps, [step]: [...previous.steps[step], id] } });
+  const toggleGoal = (id: string) => update(previous => ({ ...previous, goals: previous.goals.map(goal => goal.id === id ? { ...goal, completed: !goal.completed } : goal) }));
+
   return <div className="app-shell">
     <aside className="sidebar">
-      <button className="brand" onClick={() => goTo('business')}><span className="brand-icon"><ChartNoAxesCombined size={23} /></span><span>UntungLah<small>Business learning</small></span></button>
-      <p className="nav-label">Workspace</p>
+      <button className="brand-button" onClick={() => goTo('business')} aria-label="UntungLah home"><Brand /></button>
       <nav className="nav-list" aria-label="Main navigation">
-        {nav.map(({ id, label, icon: Icon }) => <button className={'nav-item' + (activePage === id ? ' active' : '')} aria-current={activePage === id ? 'page' : undefined} key={id} onClick={() => goTo(id)}><Icon size={20} /><span>{label}</span></button>)}
+        {nav.map(({ id, label, short, icon: Icon }) => <button className={'nav-item' + (activePage === id ? ' active' : '')} aria-current={activePage === id ? 'page' : undefined} key={id} onClick={() => goTo(id)}>
+          <span className="nav-icon"><Icon size={20} /></span><span className="nav-label">{label}</span><span className="nav-short" aria-hidden="true">{short}</span>
+        </button>)}
       </nav>
-      <div className="sidebar-foot"><Store size={19} /><div><strong>Built for small businesses</strong><small>Made with Malaysia in mind</small></div></div>
+      <div className="sidebar-tip"><span className="tip-icon"><Lightbulb size={17} /></span><strong>Smart tip</strong><p>Recording every day makes each insight more accurate.</p></div>
+      <div className="profile-mini">
+        <span className="avatar">{initials || <Store size={17} />}</span>
+        <div><strong>{business.profile?.name ?? 'No business yet'}</strong><span>{sample ? 'Demo workspace · fictional' : 'My own business'}</span></div>
+      </div>
     </aside>
-    <div className="workspace">
+    <div className="main">
       <header className="topbar">
-        <div className="breadcrumb"><span>Workspace</span><ChevronRight size={14} /><strong>{nav.find(item => item.id === activePage)?.label}</strong></div>
-        <span className="mobile-wordmark">UntungLah</span>
+        <button className="mobile-brand" onClick={() => goTo('business')} aria-label="UntungLah home"><Brand /></button>
+        <div className="topbar-title"><span>{nav.find(item => item.id === activePage)?.label}</span><small>{dateLabel}</small></div>
         <div className="topbar-actions">
           {sample && <span className="sample-badge"><FlaskConical size={15} /> Sample data</span>}
-          <button className="button ghost" onClick={() => changeView(!sample)}>{sample ? 'My own business' : 'Demo workspace'}</button>
+          <button className="button ghost small" onClick={() => changeView(!sample)}>{sample ? 'My own business' : 'Demo workspace'}</button>
+          {initials && <span className="avatar" aria-hidden="true">{initials}</span>}
         </div>
       </header>
-      <main className="page">
+      <main className="content">
         {storageError && <p className="error" role="alert">Your browser couldn’t save updates. Keep this page open if you need the current session.</p>}
         {guide && <GuidedBar step={guide.step} highest={guide.highest} select={setStep} exit={() => goTo(activePage)} />}
-        {guideComplete && <div className="notice" role="status"><strong>Guided demo completed.</strong><p>Your quiz and improvement goal are saved in the demo workspace.</p></div>}
-        {activePage === 'business' && <BusinessPage key={String(sample)} business={business} recommended={recommended} startGuide={startGuide}
+        {guideComplete && <div className="notice highlight" role="status"><strong>Guided demo completed.</strong><p>Your quiz and improvement goal are saved in the demo workspace.</p></div>}
+        {activePage === 'business' && <BusinessPage key={String(sample)} business={business} recommended={recommended} completed={completed} startGuide={startGuide}
           tryDemo={() => changeView(true)} resetDemo={() => { setDemo(demoBusiness()); setGoalDraft(null); }}
           saveProfile={profile => update(previous => ({ ...previous, profile }))}
           addRecord={record => update(previous => ({ ...previous, records: [...previous.records, record] }))}
           deleteRecord={id => update(previous => ({ ...previous, records: previous.records.filter(record => record.id !== id) }))}
-          openLesson={selectTopic} guideAdvance={guide ? () => setStep(1) : undefined} />}
+          openLesson={selectTopic} toggleGoal={toggleGoal} navigate={goTo} guideAdvance={guide ? () => setStep(1) : undefined} />}
         {activePage === 'learning' && <LearningPage business={business} selected={guide ? 'pricing' : topic} recommended={recommended} completed={completed}
-          showQuiz={guide ? guide.step === 2 : quiz} select={selectTopic} openQuiz={() => setQuiz(true)}
+          step={guide ? (guide.step === 2 ? 'check' : 'learn') : lessonStep} setStep={setLessonStep} select={selectTopic} practise={() => goTo('practice')}
+          markStep={markStep} onApply={(title, id) => saveSuggestion({ title, topic: id })}
+          onSaveCost={cost => update(previous => previous.profile ? { ...previous, profile: { ...previous.profile, cost } } : previous)}
           record={(id, score, total) => update(previous => ({ ...previous, attempts: [...previous.attempts, { topic: id, score, total, date: today() }] }))}
           advance={guide ? () => setStep(guide.step === 1 ? 2 : 3) : undefined} />}
         {activePage === 'practice' && <PracticePage key={String(sample) + Boolean(guide)} business={business} context={context} guided={Boolean(guide)}
           explainStep={guide?.step === 4} onExplain={() => setStep(4)} onGoal={(title, id) => saveSuggestion({ title, topic: id })} />}
-        {activePage === 'coach' && <CoachPage context={context} onGoal={saveSuggestion} />}
+        {activePage === 'coach' && <CoachPage key={String(sample)} context={context} businessName={business.profile?.name} onGoal={saveSuggestion} />}
         {activePage === 'progress' && <ProgressPage business={business} completed={completed} suggestion={goalDraft} guided={Boolean(guide)}
           cancel={() => setGoalDraft(null)} save={goal => {
             update(previous => ({ ...previous, goals: [...previous.goals, goal] }));
             setGoalDraft(null);
             if (guide) setView(previous => ({ ...previous, guide: { step: 5, highest: 6 } }));
           }}
-          toggle={id => update(previous => ({ ...previous, goals: previous.goals.map(goal => goal.id === id ? { ...goal, completed: !goal.completed } : goal) }))}
+          toggle={toggleGoal}
           finish={() => { goTo('progress'); setGuideComplete(true); }} />}
       </main>
     </div>
