@@ -2,133 +2,98 @@
 
 ### Learn Smarter. Run Better. Earn Better.
 
-**UntungLah** is an AI-powered financial learning and business improvement platform designed for Malaysian microentrepreneurs, especially food-stall owners, pasar malam vendors, hawkers, and small informal food businesses.
+**UntungLah** is a digital business learning and decision-support platform designed for Malaysian microentrepreneurs, especially food-stall owners, pasar malam vendors, hawkers, and small informal food businesses.
 
-Many small business owners record their daily sales but struggle to understand their actual costs, pricing strategies, cash flow, and business performance.
+Running a small business involves more than simply recording sales. Entrepreneurs need to understand their costs, manage their money, set suitable prices, and make informed business decisions. However, many microentrepreneurs lack access to practical financial education and affordable business management tools.
 
-UntungLah aims to solve this problem by combining business record management, interactive financial education, business simulations, and AI-powered guidance in one accessible platform.
+UntungLah bridges this gap by combining **business record management, interactive financial education, business simulations, and AI-powered guidance** into one accessible platform.
 
-Built for **Reimagine Malaysia – Digital Inclusion Track**, UntungLah empowers Malaysian microentrepreneurs with practical financial knowledge and digital tools to make more informed business decisions.
-
-**Our Learning Journey:**
-
-Document → Learn → Quiz → Practise → Apply → Improve
-
----
-
-## 🎯 The Problem We Solve
-
-Many Malaysian microentrepreneurs manage their businesses based on experience and intuition rather than structured financial information.
-
-They commonly face challenges such as:
-
-- **Poor Financial Record-Keeping:** Difficulty tracking daily sales, purchases, and operating expenses.
-- **Limited Financial Knowledge:** Lack of understanding of product costs, profit margins, and cash flow.
-- **Pricing Difficulties:** Uncertainty about setting appropriate selling prices when ingredient costs increase.
-- **Decision-Making Challenges:** Difficulty evaluating different business strategies.
-- **Limited Practical Learning:** Difficulty applying financial knowledge to everyday business operations.
-
-UntungLah bridges the gap between financial education and real-world business application.
+Built for **Reimagine Malaysia – Digital Inclusion Track**, UntungLah aims to empower everyday Malaysian entrepreneurs with practical knowledge and accessible digital tools to make better business decisions.
 
 ---
 
 ## ✨ Key Features
 
 ### 1. My Business – Understand Your Business Finances
-
 - Record daily sales, purchases, and operating expenses.
 - Monitor money received and money paid.
-- View recorded cash surplus through a financial dashboard.
-- Understand business performance through simple financial summaries.
+- View recorded cash surplus through a simple financial dashboard.
+- Understand business performance through easy-to-read financial summaries.
 
-### 2. Learning Path – Learn Business Skills
+### 2. Learning Path – Learn Business Skills Step by Step
+- Access six short and practical business lessons.
+- Learn using examples based on familiar Malaysian businesses.
+- Complete interactive quizzes to test understanding.
+- Receive instant feedback to reinforce learning.
 
-Provides six short and practical financial learning topics:
-
-| Topic | Learning Focus |
-|---|---|
-| Record Keeping | Track daily sales, purchases, and expenses. |
-| Cost Calculation | Understand ingredient and production costs. |
-| Pricing Strategy | Learn selling prices, markup, and profit margins. |
-| Profit Management | Understand gross profit, operating profit, and break-even points. |
-| Cash Flow | Manage available money and upcoming payments. |
-| Business Growth | Understand savings, reinvestment, and business expansion. |
-
-Each learning topic includes:
-- Simple explanations.
-- Malaysian small-business examples.
-- Interactive quizzes with instant feedback.
-- Practical activities and business improvement tasks.
-
-### 3. Practice Lab – Practise Business Decisions
-
+### 3. Practice Lab – Make Better Business Decisions
 - Experiment with different product pricing strategies.
 - Simulate ingredient and production cost changes.
-- Compare baseline and adjusted business scenarios.
-- Understand how selling prices, production costs, and assumed sales quantities affect estimated gross contribution.
+- Compare different business scenarios against a baseline.
+- Understand how selling prices, costs, and assumed sales volume affect estimated gross contribution.
 
-### 4. AI Coach – Get Intelligent Business Guidance
-
-Powered by Qwen AI through Alibaba Cloud Model Studio.
-
-- Explain business financial information in simple language.
-- Interpret calculated financial results.
-- Explain pricing and cost simulation scenarios.
-- Provide practical business improvement suggestions.
-- Answer questions using the available business summary.
+### 4. AI Coach – Turn Numbers into Actionable Insights
+- Get explanations of business simulation results.
+- Understand the potential advantages and trade-offs of different decisions.
+- Ask questions using a summary of the business records.
+- Receive AI-powered guidance through Qwen when configured.
 
 ### 5. My Progress – Track Your Improvement
-
-- Monitor learning activities.
-- Track quiz progress.
-- Save business improvement goals.
-- Mark completed goals.
-- Encourage continuous learning and business improvement.
+- Monitor learning activities and quiz progress.
+- Save practical business improvement goals.
+- Mark completed goals and track progress.
+- Encourage continuous learning and better business management habits.
 
 ---
 
-## 💡 What Makes UntungLah Different?
+## 🎯 What Makes UntungLah Different?
 
-UntungLah is more than a bookkeeping application or an online financial learning platform.
+Many small business owners can see how much money they receive, but understanding whether their business decisions are actually beneficial can be challenging.
+
+UntungLah goes beyond simply recording financial transactions.
 
 It connects three important elements:
 
-| Element | Purpose |
+| Element | What It Provides |
 |---|---|
-| Financial Awareness | Help users understand their business records and financial position. |
-| Practical Learning | Teach essential financial concepts through local business examples. |
-| Decision Support | Allow users to experiment with business scenarios and understand possible outcomes. |
+| Financial Awareness | Understand sales, expenses, and recorded cash surplus. |
+| Practical Learning | Learn pricing, costs, and basic business management. |
+| Decision Support | Experiment with business scenarios and understand possible outcomes. |
 
-Instead of only teaching financial concepts, UntungLah connects learning activities to business information and encourages users to take practical action.
+**Our approach:** Learn → Understand → Experiment → Improve.
+
+UntungLah transforms business records into practical learning opportunities, helping microentrepreneurs make more informed decisions using their own business information.
 
 ---
 
 ## 🇲🇾 Designed for Malaysian Microentrepreneurs
 
-UntungLah focuses on the needs of everyday Malaysian small business owners.
+UntungLah is designed with local business environments in mind.
 
 - **Local Currency:** Uses Malaysian Ringgit (RM).
-- **Local Business Examples:** Includes familiar businesses such as nasi lemak stalls and pasar malam vendors.
-- **Simple Learning:** Uses straightforward explanations instead of complicated accounting terminology.
-- **Practical Applications:** Provides realistic pricing, ingredient-cost, and business-management scenarios.
-- **Digital Inclusion:** Makes basic financial learning and business decision-support tools more accessible.
+- **Local Examples:** Features familiar businesses such as nasi lemak stalls and pasar malam vendors.
+- **Accessible Learning:** Provides short lessons and straightforward explanations.
+- **Practical Scenarios:** Uses realistic small-business pricing and ingredient-cost examples.
+- **Digital Inclusion:** Makes basic business learning and financial decision support more accessible to small business owners.
 
 ---
 
 ## 🚀 Three-Minute Guided Demo
 
-Explore UntungLah through a guided demonstration using a fictional Malaysian food business, Warung Nasi Lemak.
+Experience the main UntungLah features through a guided demonstration using a fictional Malaysian food business, Warung Nasi Lemak.
 
-| Step | Feature | Demonstration |
+| Step | Demonstration | What to Show |
 |---|---|---|
 | 1 | Start Guided Demo | Open the sample Warung Nasi Lemak business. |
 | 2 | My Business | Show RM200 sales, RM140 cash outflows, and RM60 recorded cash surplus. |
-| 3 | Learning Path | Explore the Pricing Strategy lesson and complete a quiz. |
-| 4 | Practice Lab | Compare RM5 baseline pricing with a RM5.50 scenario. |
+| 3 | Learning Path | Explore the Pricing Strategy lesson and complete its quiz. |
+| 4 | Practice Lab | Compare the RM5 baseline with the RM5.50 pricing scenario. |
 | 5 | AI Coach | Select Explain This Decision to understand the simulation results. |
-| 6 | My Progress | Save a suggested business action and mark the goal as completed. |
+| 6 | My Progress | Save the suggested business goal and mark it as completed. |
 
 ### Example: Pricing Simulation
+
+The following example demonstrates how a small price adjustment can affect estimated gross contribution.
 
 | Item | Baseline | New Scenario |
 |---|---:|---:|
@@ -138,53 +103,41 @@ Explore UntungLah through a guided demonstration using a fictional Malaysian foo
 | Contribution per Pack | RM2.00 | RM2.50 |
 | Estimated Gross Contribution | RM80 | RM100 |
 
-Under the same assumed sales quantity, the new pricing scenario increases estimated gross contribution by RM20.
+The new scenario produces RM20 more estimated gross contribution under the same assumed sales volume.
 
-Users can also adjust the assumed quantity to explore different possible outcomes.
+Users can also adjust the assumed quantity to explore how different sales volumes affect the outcome.
 
-*Note: Simulation results are estimates based on user inputs and are not guaranteed business profits.*
+*Note: These are simulated figures, not guaranteed business profits.*
 
 ---
 
 ## 🛠️ Technology Stack
 
-UntungLah uses modern web technologies to provide an interactive and responsive experience.
+UntungLah is developed using modern web technologies.
 
 | Technology | Purpose |
 |---|---|
-| React | Build the frontend user interface. |
-| Vite | Frontend development server and build tool. |
-| TypeScript | Type-safe application logic and financial calculations. |
-| Tailwind CSS | Responsive interface styling. |
-| Lucide | Interface icons. |
-| Node.js | Backend JavaScript runtime. |
-| Express.js | Backend API server. |
-| Qwen AI | AI-powered financial explanations and business guidance. |
-| Alibaba Cloud Model Studio | Provides access to Qwen AI models. |
-| Browser Storage | Stores business records, quiz attempts, and improvement goals locally. |
+| React | Frontend user interface |
+| Vite | Development server and frontend build tool |
+| TypeScript | Type-safe application logic and financial calculations |
+| Tailwind CSS | Responsive interface styling |
+| Lucide | Interface icons |
+| Node.js | JavaScript runtime |
+| Express.js | Backend API |
+| Zod | API request validation |
+| Qwen | AI-powered business explanations and coaching |
+| Browser Storage | Local persistence of business records and progress |
 
 ### System Architecture
 
-**Frontend**
-- React handles the user interface and interactions.
-- Vite provides the development environment.
-- TypeScript manages application logic and financial calculations.
-- Tailwind CSS provides responsive styling.
+- The frontend handles user interactions and dashboard visualisation.
+- TypeScript performs financial calculations and scenario comparisons.
+- Browser storage maintains the business profile, records, quiz attempts, and improvement goals.
+- Express.js handles backend API requests.
+- Zod validates AI requests before processing.
+- Qwen provides business explanations using calculated financial summaries.
 
-**Backend**
-- Express.js handles API requests.
-- The backend communicates with Qwen through an OpenAI-compatible API client.
-- The API key is stored in the backend environment rather than exposed to frontend code.
-
-**AI Integration**
-- Qwen interprets business summaries and calculated financial comparisons.
-- The AI Coach provides explanations and practical suggestions.
-- A labelled demo explanation is available without live Qwen configuration.
-
-**Financial Calculation**
-- TypeScript performs financial calculations.
-- The application calculates financial figures before sending relevant results to the AI Coach.
-- Qwen explains the results rather than acting as the authority for financial calculations.
+The frontend and backend share calculation and coaching contracts to maintain consistent data handling.
 
 ---
 
@@ -206,7 +159,7 @@ Make sure you have installed:
 git clone <YOUR_GITHUB_REPOSITORY_URL>
 ```
 
-### 2. Navigate to the Project Folder
+### 2. Navigate to the Project Directory
 
 ```bash
 cd <YOUR_PROJECT_FOLDER>
@@ -234,46 +187,37 @@ Vite proxies API requests to the Express backend on port 3001 by default.
 
 ---
 
-## 🤖 Qwen AI API Configuration
+## 🤖 Enable Live Qwen AI Coaching
 
 UntungLah supports live AI coaching through Alibaba Cloud Model Studio.
 
-### Configuration Steps
+### Configuration
 
 1. Copy `.env.example` to `.env`.
 2. Open the `.env` file.
-3. Configure the following environment variables:
+3. Configure the following environment variables.
 
 | Variable | Description |
 |---|---|
-| `DASHSCOPE_API_KEY` | Alibaba Cloud Model Studio API key. |
-| `QWEN_BASE_URL` | OpenAI-compatible HTTPS API endpoint for the selected region. |
-| `QWEN_MODEL` | Qwen model ID enabled for your project and region. |
-| `PORT` | Express backend port. Default: `3001`. |
+| `DASHSCOPE_API_KEY` | Your server-side Model Studio API key |
+| `QWEN_BASE_URL` | HTTPS OpenAI-compatible endpoint for your Model Studio region |
+| `QWEN_MODEL` | An available Qwen model ID |
+| `PORT` | Express server port (default: 3001) |
 
 4. Save the configuration.
 5. Restart the development server.
 
-### How AI Works in UntungLah
+**Important Security Notes:**
+- Keep your API key on the backend.
+- Never expose your API key in frontend code.
+- Do not commit `.env` to GitHub.
+- Make sure `.env` is included in `.gitignore`.
 
-The AI integration follows this process:
+A labelled demo explanation is available even without Qwen configuration.
 
-1. The user interacts with the AI Coach.
-2. The frontend sends the relevant question and business summary to the backend.
-3. The backend sends the request to Qwen through Alibaba Cloud Model Studio.
-4. Qwen generates an explanation or business suggestion.
-5. The backend returns the response to the frontend.
-6. The AI Coach displays the explanation to the user.
+**Financial calculations are performed by TypeScript.** Qwen interprets the calculated results and provides explanations rather than calculating the financial figures itself.
 
-**Important:**
-- Keep the API key in the backend environment.
-- Never expose the API key in frontend code.
-- Do not upload `.env` to GitHub.
-- Financial calculations are performed by TypeScript, not generated freely by AI.
-
-A labelled demo explanation is available even without Qwen API configuration.
-
-For additional information, see [AI Integration Details](docs/AI_INTEGRATION.md).
+For more information, see [AI Integration Details](docs/AI_INTEGRATION.md).
 
 ---
 
@@ -282,40 +226,59 @@ For additional information, see [AI Integration Details](docs/AI_INTEGRATION.md)
 | Command | Description |
 |---|---|
 | `npm run dev` | Start the frontend and backend development servers. |
-| `npm test` | Run automated domain and AI Coach checks. |
-| `npm run test:browser` | Run desktop and mobile journey checks with Edge and a running built application. |
+| `npm test` | Run automated domain and AI coach checks. |
+| `npm run test:browser` | Run desktop and mobile user journey checks with Edge and a running built application. |
 | `npm run build` | Type-check the source code and build the frontend. |
 | `npm start` | Serve the built frontend and API on port 3001 after building. |
 
 ---
 
+## 📸 Screenshots
 
-## 🔒 Prototype Limitations
+Explore the UntungLah interface and its main features.
+
+### Business Dashboard
+![UntungLah dashboard showing the fictional Warung Nasi Lemak financial snapshot](docs/screenshots/01-business-snapshot.png)
+
+### Pricing Simulation
+[View Pricing Comparison](docs/screenshots/02-pricing-simulation.png)
+
+### AI Coach
+[View Decision Explanation](docs/screenshots/03-decision-explanation.png)
+
+### Learning and Goal Tracking
+[View Learning and Saved Goal](docs/screenshots/04-learning-and-goal.png)
+
+### Mobile Interface
+[View Mobile Dashboard](docs/screenshots/05-mobile-business.png)
+
+---
+
+## 🔍 Prototype Limitations
 
 UntungLah is currently a hackathon prototype. The following limitations apply:
 
 - Business records are stored locally in the browser on the same origin.
-- Clearing browser site storage removes locally stored records.
+- Clearing browser site storage will remove locally stored records.
 - The prototype supports one business workspace and its primary product.
 - Recorded cash surplus represents recorded money received minus recorded money paid.
 - Simulation contribution considers estimated variable production costs but excludes other operating expenses.
 - Sales volume is an adjustable assumption rather than a prediction of actual customer demand.
-- Live AI coaching requires valid Qwen API configuration.
+- Live AI coaching requires valid Qwen configuration.
 
 ### Future Development
 
 Potential improvements include:
 
-- Malay-language learning materials.
+- Malay-language learning materials to reach more local entrepreneurs.
 - More convenient mobile business record entry.
 - Optional secure cloud storage and cross-device synchronisation.
 - Support for multiple products and business workspaces.
-- More advanced financial insights and business simulations.
-- More personalised learning recommendations.
+- More advanced business insights and decision-support capabilities.
 
 ---
 
-## 👥 Team Contributions
+## 👥 Team Contributions and Development
 
 UntungLah is developed as a collaborative hackathon project.
 
@@ -335,10 +298,10 @@ Team contributions and development credits should reflect actual individual cont
 
 ## 🌱 Our Vision
 
-We believe every small business owner deserves access to the knowledge and tools needed to make better business decisions.
+We believe that every small business owner deserves access to the knowledge and tools needed to make better business decisions.
 
-UntungLah aims to make financial learning more practical, financial understanding more accessible, and digital opportunities more inclusive.
+With UntungLah, we aim to make business learning more practical, financial understanding more accessible, and digital opportunities more inclusive.
 
-**UntungLah – Learn Smarter. Run Better. Earn Better.**
+**UntungLah — Learn Smarter. Run Better. Earn Better.**
 
 *Empowering Malaysian microentrepreneurs, one better business decision at a time.*
